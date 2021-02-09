@@ -1,8 +1,8 @@
-# HDMI-matrix-control
 
 My efforts to demystify and control various HDMI matrix hardware
 
-<b>gofanco HDextIP based on HDbitT</b>
+
+#gofanco HDextIP based on HDbitT
 
 gofanco HDextIP kit consists of one TX and one RX unit
 Comparison of their units here: https://www.gofanco.com/hdbitt-hdmi-extender-comparison-table
