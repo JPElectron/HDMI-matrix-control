@@ -7,8 +7,10 @@ My efforts to demystify and control various HDMI matrix hardware
 gofanco HDextIP kit consists of one TX and one RX unit
 Comparison of their units here: https://www.gofanco.com/hdbitt-hdmi-extender-comparison-table
 
+![gofanco-front](gofanco-hdextip/gofanco-front.jpg?raw=true "Front")
+
 Note both the TX and RX unit require 5VDC "wall wort" style power supply
-No POE or POC :( unless you use a POE splitter such as https://www.amazon.com/dp/B003CFATQK inline
+No POE or POC, unless you use a POE splitter such as https://www.amazon.com/dp/B003CFATQK infront of the unit, or solder a POE power supply PCB inside (there is already the space and through-hole connections for it)
 
 when the RX unit is "watching" a TX unit...
 it seems the TX unit (192.168.x.102) is "broadcasting" to 239.255.42.59 (a multicast address)
