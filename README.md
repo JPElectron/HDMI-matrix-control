@@ -46,8 +46,8 @@ Interesting logo served by the TX unit http://192.168.x.101/snapshot.jpg has the
 ![gofanco-snapshot](gofanco-hdextip/gofanco-snapshot.jpg?raw=true "gofanco-snapshot")
 
 Otherwise the webserver only tells you some version info and the chance to update with a non-existant firmware file...
-![gofanco-rx-server](gofanco-hdextip/gofanco-rx-server.jpg?raw=true "gofanco-rx-server")
-![gofanco-tx-server](gofanco-hdextip/gofanco-tx-server.jpg?raw=true "gofanco-tx-server")
+![gofanco-rx-server](gofanco-hdextip/gofanco-rx-server.png?raw=true "gofanco-rx-server")
+![gofanco-tx-server](gofanco-hdextip/gofanco-tx-server.png?raw=true "gofanco-tx-server")
 
 Onscreen when there is no HDMI signal...
 ![gofanco-onscreen](gofanco-hdextip/gofanco-onscreen.jpg?raw=true "gofanco-onscreen")
