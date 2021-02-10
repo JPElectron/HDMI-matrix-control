@@ -1,8 +1,8 @@
 
 My efforts to demystify and control various HDMI matrix hardware...
 
-# Canidate 1
-gofanco HDextIP-TX/RX (1080P Encoder/Decoder) kit based on HDbitT
+# Candidate 1
+# gofanco HDextIP-TX/RX (1080P Encoder/Decoder) kit based on HDbitT
 
 gofanco HDextIP kit consists of one TX and one RX unit
 
@@ -70,8 +70,8 @@ https://github.com/John-K/lkctl
 https://cdn2.hubspot.net/hubfs/5334545/VuMATRIX-IP-PRO-control-protocol-V1.0%20(4).pdf
 
 
-# Canidate 2
-AV Access HDIP100E/D (1080P Encoder/Decoder) kit based on VDirector
+# Candidate 2
+# AV Access HDIP100E/D (1080P Encoder/Decoder) kit based on VDirector
 
 AV Access only advertises the iPad app found here: https://apps.apple.com/us/app/vdirector/id1499036526
 
@@ -139,13 +139,13 @@ Of interesting note (from the API document) is the ability to change the NO SOUR
     http://192.168.xx.19/upload_bg (HTTP POST)
 
 
-# Canidate 3
-NoHassleAV 8x8-HDbaseT-matrix
+# Candidate 3
+# NoHassleAV 8x8-HDbaseT-matrix
 
 Comming soon
 
 
-# Canidate 4
-NoHassleAV8x8-HDbaseT-150m-matrix
+# Candidate 4
+# NoHassleAV8x8-HDbaseT-150m-matrix
 
 Comming soon
