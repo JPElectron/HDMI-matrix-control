@@ -23,6 +23,13 @@ or solder a POE power supply PCB inside (there is already the space and through-
 ![gofanco-rx-inside](gofanco-hdextip/gofanco-rx-inside.jpg?raw=true "gofanco-rx-inside")
 ![gofanco-tx-inside](gofanco-hdextip/gofanco-tx-inside.png?raw=true "gofanco-tx-inside")
 
+In my tests I had 2 TX and two RX units on the same LAN...
+
+    192.168.100.101 - TX
+    192.168.100.102 - TX
+    192.168.100.105 - RX
+    192.168.100.106 - RX
+
 when the RX unit is "watching" a TX unit...
 
     it seems the TX unit (192.168.x.102) is "broadcasting" to 239.255.42.59 (a multicast address)
@@ -47,7 +54,10 @@ Software from www.hdbitt.com/download-matrix (link obtained from actually readin
 
 I could not get the android version to do anything which is dissapointing since the YouTube video on the HDbitT site shows snapshot and streaming previews of every TX unit on the same LAN.  Windows version tries to connect to RX unit on port 9002
 
-Interesting logo served by the TX unit http://192.168.x.101/snapshot.jpg has the same name as one of the ICs...
+Interesting logo served by the TX unit has the same name as one of the ICs...
+
+    http://192.168.100.101/snapshot.jpg
+
 ![gofanco-snapshot](gofanco-hdextip/gofanco-snapshot.jpg?raw=true "gofanco-snapshot")
 
 Otherwise the webserver only tells you some version info and the chance to update with a non-existant firmware file...
@@ -73,17 +83,23 @@ https://cdn2.hubspot.net/hubfs/5334545/VuMATRIX-IP-PRO-control-protocol-V1.0%20(
 # Candidate 2
 # AV Access HDIP100E/D (1080P Encoder/Decoder) kit based on VDirector
 
+Official API document leaves allot to be desired: https://cdn.shopify.com/s/files/1/0260/4934/7646/files/API_Command_Set_HDIP100E_HDIP100D_V1.0.0.pdf
+
+Similar Mfg/OEM of the same device: https://www.alfatronelectronics.com/product/alfatron-alf-ip2he/ + https://www.avpixelfly.com/product/187.html
+
 AV Access only advertises the iPad app found here: https://apps.apple.com/us/app/vdirector/id1499036526
 
 which sadly is only "Compatible with iPad" not phones???
 
 But it seems the real developer is also updating an Android version here: https://apkpure.com/vdirector/com.proitav.vdirector
 
-Without a DHCP server units assign themselves 169.254.x.x but in my tests...
+Without a DHCP server units assign themselves 169.254.x.x
 
-   192.168.xx.40 = Android vDirector App
-   192.168.xx.60 - Encoder (TX-1)
-   192.168.xx.19 - Decoder (RX-1)
+In my tests I had on the LAN...
+
+    192.168.100.40 = Android vDirector App
+    192.168.100.60 = Encoder (TX-1)
+    192.168.100.19 = Decoder (RX-1)
 
 Video traffic from encoder to decoder all seems to be UDP Src Port 57xxx-58xxx to Dst Port 13000
 
@@ -125,8 +141,8 @@ To stop the stream (drag the video preview back to the Tx List) you get traffic 
 
 You can get a motion JPG image preview from the Encoder with a URL like...
  
-    http://192.168.xx.60/stream?resolution=1080P&fps=20&bitrate=128
-    http://192.168.xx.60/stream
+    http://192.168.100.60/stream?resolution=1080P&fps=20&bitrate=128
+    http://192.168.100.60/stream
 
 A google search for the control string "gbconfig --source-select" seems to indicate other units also use this same code...
 
@@ -136,7 +152,7 @@ https://www.infobitav.com/wp-content/uploads/2021/02/Telnet-commands-for-iShare-
 
 Of interesting note (from the API document) is the ability to change the NO SOURCE default image...
 
-    http://192.168.xx.19/upload_bg (HTTP POST)
+    http://192.168.100.19/upload_bg (HTTP POST)
 
 
 # Candidate 3
