@@ -14,11 +14,7 @@ Comparison of their units here: https://www.gofanco.com/hdbitt-hdmi-extender-com
 
 ![gofanco-bottom](gofanco-hdextip/gofanco-bottom.jpg?raw=true "gofanco-bottom")
 
-Note both the TX and RX unit require 5VDC "wall wort" style power supply
-
-No POE or POC, unless you use a POE splitter such as https://www.amazon.com/dp/B003CFATQK infront of the unit,
-
-or solder a POE power supply PCB inside (there is already the space and through-hole connections for it)
+Dissapointing that both the TX and RX unit require 5VDC "wall wort" style power supply.   No POE or POC, unless you use a POE splitter such as https://www.amazon.com/dp/B003CFATQK infront of each unit, or solder a POE power supply PCB inside (there is already the space and through-hole connections for it on the PCB)...
 
 ![gofanco-rx-inside](gofanco-hdextip/gofanco-rx-inside.jpg?raw=true "gofanco-rx-inside")
 ![gofanco-tx-inside](gofanco-hdextip/gofanco-tx-inside.png?raw=true "gofanco-tx-inside")
@@ -30,15 +26,15 @@ In my tests I had 2 TX and two RX units on the same LAN...
     192.168.100.105 - RX
     192.168.100.106 - RX
 
-when the RX unit is "watching" a TX unit...
+When the RX unit is "watching" a TX unit...
 
     it seems the TX unit (192.168.x.102) is "broadcasting" to 239.255.42.59 (a multicast address)
     UDP port 5004 to destination UDP 5004
     the RX unit is actually at IP 192.168.x.106
 
-doing an IP scan of the entire LAN usually freezes the TX units which have to be rebooted, the HTTP server also stops responding, perhaps this is why they say use a dedicated switch?
+Doing an IP scan of the entire LAN usually freezes the TX units which have to be rebooted, the HTTP server also stops responding, perhaps this is why they say use a dedicated switch?
 
-each TX unit broadcast traffic comes from it's own address, for example when selecting the "TX connected" via front display on the RX unit...
+Each TX unit broadcast traffic comes from it's own address, for example when selecting the "TX connected" via front display on the RX unit...
 
     ID 11 the traffic comes from 239.255.42.59
     ID 12 the traffic comes from 239.255.42.60
@@ -48,7 +44,7 @@ The IR remote is functional, but strangly will set the TX ID when pointed at bot
 
 Seems you would want the TX unit to always stay at the set ID and never change after setup.
 
-But using IP2IR or similar to send the correct codes to individual RX units makes for easy switching
+But using IP2IR: https://www.amazon.com/Global-Cache-IP2IR-iTach-Wired/dp/B003BFTKUC you can send the 2 digit TX code to individual RX units, and this makes for easy switching
 
 Software from www.hdbitt.com/download-matrix (link obtained from actually reading the HDextIP kit manual)
 
@@ -85,17 +81,27 @@ https://cdn2.hubspot.net/hubfs/5334545/VuMATRIX-IP-PRO-control-protocol-V1.0%20(
 
 Official API document leaves allot to be desired: https://cdn.shopify.com/s/files/1/0260/4934/7646/files/API_Command_Set_HDIP100E_HDIP100D_V1.0.0.pdf
 
+![avaccess-front](avaccess-hdip100/avaccess-front.jpg?raw=true "avaccess-front")
+
+At least these have POE built-in, interesting that the Encoder unit has the POE module on a seperate PCB, prone to failure?...
+
+![avaccess-insidefront](avaccess-hdip100/avaccess-insidefront.jpg?raw=true "avaccess-insidefront")
+![avaccess-insiderear](avaccess-hdip100/avaccess-insiderear.jpg?raw=true "avaccess-insiderear")
+
+Dissapointing that bi-directional IR is not included, but has a place for it on the PCB.  Also the Encoder unit has space for a USB type B socket, intended for firmware upgrades?
+
+![avaccess-enc-noir](avaccess-hdip100/avaccess-enc-noir.jpg?raw=true "avaccess-enc-noir")
+![avaccess-dec-noir](avaccess-hdip100/avaccess-dec-noir.jpg?raw=true "avaccess-dec-noir")
+
 Similar Mfg/OEM of the same device: https://www.alfatronelectronics.com/product/alfatron-alf-ip2he/ + https://www.avpixelfly.com/product/187.html
 
-AV Access only advertises the iPad app found here: https://apps.apple.com/us/app/vdirector/id1499036526
-
-which sadly is only "Compatible with iPad" not phones???
+AV Access only advertises the iPad app found here: https://apps.apple.com/us/app/vdirector/id1499036526 which sadly is only "Compatible with iPad" not phones???
 
 But it seems the real developer is also updating an Android version here: https://apkpure.com/vdirector/com.proitav.vdirector
 
 Without a DHCP server units assign themselves 169.254.x.x
 
-In my tests I had on the LAN...
+In my tests I had two units on the LAN...
 
     192.168.100.40 = Android vDirector App
     192.168.100.60 = Encoder (TX-1)
@@ -109,16 +115,16 @@ For example, when you drag the video from TX-1 to RX-1 the following is sent fro
 
     4"E`·n+Ñ%EHu3@@ñÀ¨(À¨³@h8àï½2½!p°%
     ÎMºecho -n "==BEGINSEQ=6==";gbconfig --source-select=341B22810578;gbparam s layout_1;gbparam s layout_2;gbparam s layout_3;gbparam s layout_4;gbparam s layout_5;gbparam s layout_6;gbparam s layout_7;gbparam s layout_8;gbparam s layout_9;gbparam s layout_10;echo -n "==ENDSEQ=6=="
-
+    
     4"E`·n+Ñ%E5u4@@À¨(À¨³@h8â½2¾>tS
     ÎM.)
-
+    
     4"E`·n+Ñ%E4u5@@À¨(À¨³@h8â½2¾Nt]Q
     ÎMY,
-
+    
     4"E`·n+Ñ%E4u6@@À¨(À¨³@h8â½2¾Zt[\
     ÎO\
-
+    
     4"E`·n+Ñ%E4u7@@À¨(À¨³@h8â½2¾^t[T
     ÎO\
 
@@ -129,20 +135,20 @@ To stop the stream (drag the video preview back to the Tx List) you get traffic 
 
     4"E`·n+Ñ%E@u8@@ôÀ¨(À¨³@h8â½2¾^t>Y
     ÎT\echo -n "==BEGINSEQ=7==";gbconfig --source-select=NULL;gbparam s layout_1;gbparam s layout_2;gbparam s layout_3;gbparam s layout_4;gbparam s layout_5;gbparam s layout_6;gbparam s layout_7;gbparam s layout_8;gbparam s layout_9;gbparam s layout_10;echo -n "==ENDSEQ=7=="
-
+    
     4"E`·n+Ñ%E5u9@@þÀ¨(À¨³@h8ã½2¿sxI!
-ÎTè
-
+    ÎTè
+    
     4"E`·n+Ñ%E4u:@@þÀ¨(À¨³@h8ã½2¿xRé
-ÎT¾é
-
+    ÎT¾é
+    
     `·n+Ñ%4"EE8£å@@éNÀ¨À¨(³@½2¿h8ãþþ
-&ÎV÷/ # 
+    &ÎV÷/ # 
 
 You can get a motion JPG image preview from the Encoder with a URL like...
  
     http://192.168.100.60/stream?resolution=1080P&fps=20&bitrate=128
-    http://192.168.100.60/stream
+    or more simply with just http://192.168.100.60/stream
 
 A google search for the control string "gbconfig --source-select" seems to indicate other units also use this same code...
 
