@@ -1,6 +1,17 @@
 
 My efforts to demystify and control various HDMI matrix hardware...
 
+Why can't anyone make a unit that actually has ALL the features I want:
+
+    - HTTP control (not serial, not telnet, not some un-standard port, not webhooks, not websockets, just plain HTTP on port 80)
+    - HTTP image preview/stream
+    - Bi-directional IR, including interjecting IR commands via HTTP (thus not having to buy another IP2IP unit)
+    - 1080P upscale to 4K
+    - 4K downscale to 1080P
+    - Audio extraction with both analog (L/R) and optical (Toslink) outputs on the Decoder/RX end
+    - Real POE (not POC or some proprietary POE)
+    - Ability to set units with a static IP (not having to use DHCP reservations)
+
 # Candidate 1
 # gofanco HDextIP-TX/RX (1080P Encoder/Decoder) kit based on HDbitT
 
